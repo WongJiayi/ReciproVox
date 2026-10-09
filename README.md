@@ -200,4 +200,4 @@ demos/                 videos shown above
 
 ## License
 
-To be decided. `third_party/SigVLP` is released under the MIT license.
+MIT, see [LICENSE](LICENSE). Vendored code in `third_party/` keeps its own license (SigVLP: MIT).
