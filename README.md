@@ -41,18 +41,6 @@ of 16³-voxel blocks, and each block is replaced by its nearest entry in an **at
 CT blocks. A single Qwen3-8B language model, extended with one token per codebook entry, is trained on both
 directions at once; a task token selects the direction.
 
-```mermaid
-flowchart LR
-    R[Radiology report] -->|"&lt;TASK_GEN&gt;"| LM((Bidirectional LM<br/>Qwen3-8B + 262k visual tokens))
-    LM -->|4,096 atlas tokens| M[Atlas mosaic<br/>256³ voxels]
-    M --> D[Stage 1: Deblocker<br/>3D U-Net, latent space]
-    D --> S[Stage 2: Rectifier<br/>flow-matching SDEdit]
-    S --> V[Chest CT volume]
-
-    C[Chest CT volume] --> T[Atlas tokenizer<br/>SigVLP + cosine NN]
-    T -->|"&lt;TASK_REPORT&gt; + 4,096 tokens"| LM
-    LM --> O[Radiology report]
-```
 
 - **Atlas tokenizer.** Each block is embedded by the SigVLP 3D encoder and matched to the codebook by cosine
   similarity. Because every token is a real CT block, the token grid already decodes to a CT-like mosaic
@@ -186,16 +174,6 @@ tools/                 make_demo_video.py
 configs/               paths.yaml
 third_party/           CTFlow (STDiT backbone), SigVLP (MIT)
 demos/                 videos shown above
-```
-
-## Citation
-
-```bibtex
-@article{reciprovox,
-  title  = {ReciproVox},
-  author = {},
-  year   = {2026}
-}
 ```
 
 ## License
