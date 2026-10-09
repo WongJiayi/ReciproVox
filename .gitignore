@@ -1,0 +1,8 @@
+configs/paths.local.yaml
+checkpoints/
+outputs/
+__pycache__/
+*.pyc
+*.npy
+*.nii.gz
+wandb/

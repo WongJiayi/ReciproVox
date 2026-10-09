@@ -1,0 +1,15 @@
+torch>=2.2
+transformers==4.51.3
+diffusers==0.29.0
+peft==0.13.2
+safetensors
+accelerate
+numpy
+scipy
+scikit-learn
+pillow
+nibabel
+pyyaml
+omegaconf
+einops
+positional-encodings

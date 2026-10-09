@@ -1,0 +1,27 @@
+# ReciproVox checkpoint / resource paths.
+# Copy this file to configs/paths.local.yaml (git-ignored) and edit, or point
+# RECIPROVOX_CONFIG at your own file. Relative paths are resolved against the repo root.
+
+# --- language model (both directions) -------------------------------------------
+qwen3_base:      checkpoints/Qwen3-8B                       # HF: Qwen/Qwen3-8B
+lm_ckpt:         checkpoints/reciprovox_lm_18.4k.safetensors # bidirectional LM weights
+lora:            ""                                         # optional GRPO LoRA adapter dir
+
+# --- atlas codebook (262,144 entries of 16^3 uint8 voxel blocks) ----------------
+atlas_pixels:    checkpoints/atlas/codebook_250k.bin        # 262144 x 16^3 uint8
+atlas_feats:     checkpoints/atlas/codebook_250k.fvecs      # 262144 x 1024 float32 (SigVLP)
+sigvlp_ckpt:     checkpoints/sigvlp/CXR_v2_step234930.pt    # block encoder used to tokenize CT
+siglip_base:     google/siglip2-large-patch16-256           # SigLIP-2 backbone of SigVLP (HF id or dir)
+
+# --- refinement (mosaic -> CT) ---------------------------------------------------
+vae_pretrained:  checkpoints/vae/FLUX_vae_checkpoint        # diffusers AutoencoderKL dir
+vae_ft_ckpt:     checkpoints/vae/vae_step11000.pt           # CT fine-tuned VAE weights
+stdit_backbone:  checkpoints/ctflow/denoiser_ema            # CTFlow STDiT (Rectifier backbone)
+deblocker_ckpt:  checkpoints/deblocker/step_45000.pt        # Stage 1
+rectifier_ckpt:  checkpoints/rectifier/step34000.pt         # Stage 2
+
+# --- evaluation ------------------------------------------------------------------
+radbert_ckpt:    checkpoints/eval/RadBertClassifier.pth     # CT-RATE 18-class report classifier
+hf_cache:        checkpoints/eval/hf_cache                  # roberta-base tokenizer + nltk data
+ctclip_scorer_dir: ""                                       # external CT-CLIP scorer module (see evaluation/README)
+ctclip_ckpt:     checkpoints/eval/CT-CLIP_v2.pt
