@@ -179,3 +179,26 @@ demos/                 videos shown above
 ## License
 
 MIT, see [LICENSE](LICENSE). Vendored code in `third_party/` keeps its own license (SigVLP: MIT).
+
+## Citation
+
+The paper will be on arXiv soon. Until then, please cite:
+
+```bibtex
+@article{wang2026reciprovox,
+  title   = {Reading and Writing Computed Tomography Volumes with One Language Model},
+  author  = {Wang, Jiayi and Reynaud, Hadrien and Durugol, Omer Faruk and Hamamci, Ibrahim Ethem and Er, Sezgin and Shit, Suprosanna and Li, Mingrui and Turkbey, Utku and Menze, Bjoern and Kainz, Bernhard},
+  journal = {arXiv preprint arXiv:TBA},
+  year    = {2026}
+}
+```
+
+## Acknowledgements
+
+We acknowledge HPC resources from NHR@FAU (b180dc) and support by ERC MIA-NORMAL 101083647, DFG 513220538,
+512819079, 440719683, Isambard-AI (AIRR), DSIT via UKRI and STFC [ST/AIRR/I-A-I/1023], and the state of Bavaria
+(HTA and the Bavarian AI Foundation Model Initiative (AI-Bay.eu), funded by the Bavarian StMWK). Coding agents and
+LLMs from Anthropic, OpenAI and Google were used for experiment orchestration, cluster monitoring and writing
+assistance.
+We also thank the Helmut Horten Foundation, Istanbul Medipol University, Intramural Research Program of the NLM, and the
+NIH, for support and data.
