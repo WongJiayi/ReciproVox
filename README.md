@@ -193,6 +193,12 @@ The paper will be on arXiv soon. Until then, please cite:
 }
 ```
 
+## Model weights
+
+Model weights will be released here for download after the paper has completed peer review. Once available,
+download them into `checkpoints/` (the layout expected by `configs/paths.yaml`), or point the config at your
+own locations.
+
 ## Acknowledgements
 
 We acknowledge HPC resources from NHR@FAU (b180dc) and support by ERC MIA-NORMAL 101083647, DFG 513220538,
